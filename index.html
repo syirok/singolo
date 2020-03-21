@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=im, initial-scale=1.0">
-    <title>Singolo. Part 1</title>
+    <title>Singolo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,27 +14,27 @@
 
             </div>
             <nav class="navbar">
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">SERVICES</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                <ul id="menu">
+                    <li class="active"><a href="#home">HOME</a></li>
+                    <li><a href="#services" >SERVICES</a></li>
+                    <li><a href="#portfolio" >PORTFOLIO</a></li>
+                    <li><a href="#about" >ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div class="slider">
+        <section id="home" class="slider">
             <div class="wrapper">
                 <a href="#"><img src="assets\arrow-left.png" alt="arrow" class="left"></a>
                 <img src="assets\iphone-vert.png" alt="iphone" class="vert">
                 <img src="assets\iphone-horiz.png" alt="iphone" class="hor">
                 <a href="#"><img src="assets\arrow-right.png" alt="arrow" class="right"></a>
             </div>
-        </div>
-
-        <div class="services">
+        </section>
+        
+        <section id="services" class="services">
             <div class="wrapper">
                 <h1>Our Services</h1>
                 <p class="description"> Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor 
@@ -104,11 +104,11 @@
            
             </div>
 
-        </div>
+        </section>
 
 
 
-        <section class="portfolio">
+        <section id="portfolio" class="portfolio">
             <div class="wrapper">
                 <h2>Portfolio</h2> 
                 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>  
@@ -139,7 +139,7 @@
             </div>
         </section>
     
-        <section class="about">
+        <section id="about" class="about">
         <div class="wrapper">
             <h2>About Us</h2>
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -184,17 +184,17 @@
 
 
 
-        <section class="contact">
+        <section id="contact" class="contact">
             <div class="wrapper">
                 <h2>Get a Quote</h2>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="form-container">
-                    <form action="mailto:syirok@tut.by" method="post" enctype="text/plain">
+                    <form action="mailto:syirok@tut.by" method="post" enctype="text/plain" id="form-cont" onsubmit=" return false;">
                         <input type="text" name="username" placeholder="Name (Required)" required> <br>
                         <input type="email" name="email-address" placeholder="Email (Required)" required> <br>
-                        <input type="text" name="subject" placeholder="Subject" ><br>
-                        <textarea name="comment" placeholder="Describe your project in detail..."></textarea> <br>
-                        <input class="button" type="submit" name="submit" value="Send">
+                        <input id="Subject" type="text" name="subject" placeholder="Subject" ><br>
+                        <textarea name="comment" id="Description" placeholder="Describe your project in detail..."></textarea> <br>
+                        <input id="btn" class="button" type="submit" name="submit" value="Send">
                     </form>
                     <div class="contact-info">
                         <h3>Contact Information</h3>
@@ -212,8 +212,16 @@
                         </div>
                     </div>
                 </div>
-            
-            
+                      
+            </div>
+            <div id="message-block" class="hidden">
+                <div id="message">
+                    <p>The letter was sent</p>
+                    <p>Subject:  <span class="" id="result-sub"></span></p>
+                    <p>Description:  <span class="" id="result-des"></span></p>
+                    <br>
+                    <button id="close-btn" >OK</button>
+                </div>
             </div>
     
         </section>
@@ -231,6 +239,8 @@
         </footer>
 
     </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

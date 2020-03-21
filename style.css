@@ -30,11 +30,13 @@
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .wrapper {
     max-width: 1020px;
     margin: 0 auto;
+    box-sizing: border-box; /*чтобы паддинг не растягивал паддингом*/
 }
 
 header {
@@ -42,6 +44,9 @@ header {
     color: #ffffff;
     border-bottom: 6px solid #323746;
     height: 89px;
+    position: sticky;
+    top: 0;
+    width: 100%;
 }
 
 header .wrapper {
@@ -68,7 +73,7 @@ header a {
     color: #ffffff;
 }
 
-.navbar a:hover {
+.navbar li:not(.active) a:hover {
     color: #f06c64;
 }
 
@@ -88,7 +93,14 @@ header a {
     padding: 0 13px;
     list-style-type: none;
     padding-top: 30px;
+    padding-bottom: 20px;
 }
+
+.navbar ul li.active {
+    background-color: #4b4e58;
+    
+}
+
 
 .navbar ul li+li::before {
     content: ".";
@@ -365,6 +377,8 @@ header a {
     padding: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 300px;
 }
 
 .member .member-description {
@@ -527,6 +541,35 @@ footer .social-media {
 footer .social-media li {
     margin-right: 8px;
 }
+
+section {
+    scroll-margin-top: 95px;
+}
+
+#message-block {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #0008;
+}
+
+#message-block.hidden {
+    display: none;
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid black;
+    text-align: center;
+    padding: 40px;
+    background-color: blanchedalmond;
+    color: black;
+}
+
 
 
 
